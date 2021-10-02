@@ -31,7 +31,7 @@ namespace Tube
             services.AddDbContext<TubeContext>(opt => opt.UseSqlServer
                 (Configuration.GetConnectionString("TubeConnection")));
             services.AddControllers();
-            services.AddScoped<ITubeRepo, MockTubeRepo>();
+            services.AddScoped<ITubeRepo, SqlTubeRepo>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Tube", Version = "v1" });
