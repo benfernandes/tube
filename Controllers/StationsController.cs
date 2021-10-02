@@ -9,7 +9,12 @@ namespace Tube.Controllers
     [ApiController]
     public class StationsController : ControllerBase
     {
-        private readonly MockTubeRepo _repository = new MockTubeRepo();
+        private readonly ITubeRepo _repository;
+
+        public StationsController(ITubeRepo repository)
+        {
+            _repository = repository;
+        }
 
         // GET api/stations
         [HttpGet]
