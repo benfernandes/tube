@@ -31,6 +31,7 @@ namespace Tube
             services.AddDbContext<TubeContext>(opt => opt.UseSqlServer
                 (Configuration.GetConnectionString("TubeConnection")));
             services.AddControllers();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<ITubeRepo, SqlTubeRepo>();
             services.AddSwaggerGen(c =>
             {
