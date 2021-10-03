@@ -29,7 +29,11 @@ namespace Tube.Controllers
         public ActionResult<Station> GetStationById(int id)
         {
             var station = _repository.GetStationById(id);
-            return Ok(station);
+            if (station != null)
+            {
+                return Ok(station);
+            }
+            return NotFound();
         }
     }
 }
