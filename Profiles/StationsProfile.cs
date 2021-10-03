@@ -9,6 +9,7 @@ namespace Tube.Profiles
         public StationsProfile()
         {
             CreateMap<Station, StationReadDto>();
+            CreateMap<StationCreateDto, Station>();
         }
     }
 }

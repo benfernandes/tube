@@ -5,6 +5,11 @@ namespace Tube.Data
 {
     public class MockTubeRepo : ITubeRepo
     {
+        public void CreateStation(Station station)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IEnumerable<Station> GetAllStations()
         {
             return new List<Station>
@@ -18,6 +23,11 @@ namespace Tube.Data
         public Station GetStationById(int id)
         {
             return new Station { Id = 0, Name = "Ruislip Gardens" };
+        }
+
+        public bool SaveChanges()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
